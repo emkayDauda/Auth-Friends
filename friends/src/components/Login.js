@@ -6,7 +6,7 @@ const initialValues = {
     username: "",
     password: ""
 }
-export default Login = ({onSubmit}) => {
+export default function Login({onSubmit}) {
     return (
         <Formik
         initialValues = {initialValues}
