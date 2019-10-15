@@ -3,8 +3,8 @@ import { Button, Card, Heading,Content, } from "react-bulma-components";
 import styled from "styled-components";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 
-export default function Friend({friend}) {
-    const {name, age, email} = friend
+export default function Friend({friend, onDelete}) {
+    const {name, age, email, id} = friend
     return (
         <StyledCard>
             <Heading>{name}</Heading>
@@ -12,7 +12,7 @@ export default function Friend({friend}) {
             <Content>{`Age: ${age}`}</Content>
            <div>
            <Button color='dark' >Edit</Button>
-            <Button color='danger' >Delete</Button>
+            <Button onClick={() => onDelete(id)} color='danger' >Delete</Button>
            </div>
         </StyledCard>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from "react-bulma-components";
 import styled from "styled-components";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Form, Formik, Field } from "formik";
