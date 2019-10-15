@@ -3,6 +3,7 @@ import { Route, NavLink, withRouter } from 'react-router-dom';
 import Login from "./components/Login";
 import './App.css';
 import axios from "axios";
+import FriendsList from './components/FriendsList';
 
 
 const login = (formValues, actions) => {
@@ -27,14 +28,18 @@ function App(props) {
     <div className="App">
      <nav>
        <NavLink exact to='/'>Login</NavLink>
-       {/* <NavLink  to='/'>Login</NavLink> */}
+       <NavLink  to='/friends'>Friends</NavLink>
      </nav>
 
      <Route exact path = '/' render={ props => {
        
        return (<Login onSubmit ={login}/>)
-     }}
-      />
+     }}/>
+     
+     <Route path = '/friends' render={ props => {
+       
+       return (<FriendsList onSubmit ={login}/>)
+     }}/>
     </div>
   );
 }
