@@ -5,8 +5,17 @@ import Friend from "./Friend";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+
+
+const initialFriendValues = {
+    name: "",
+    age: "",
+    email: ""
+  }
+
 export default function FriendsList(props) {
     const [friends, setFriends] = useState([])
+    const [friendForm, setFriendForm] = useState(initialFriendValues)
 
     const deleteFriend = id => {
         axiosWithAuth().delete(`http://localhost:5000/api/friends/${id}`)
@@ -33,7 +42,7 @@ export default function FriendsList(props) {
             <Content>Click to add</Content>
             <Content>{`Down below `}</Content>
            <div>
-           <Button color='primary' >Add</Button>
+           <NavLink to='/new-friend' ><Button color='primary' >Add</Button></NavLink>
             {/* <Button color='danger' >Delete</Button> */}
            </div>
         </StyledCard>

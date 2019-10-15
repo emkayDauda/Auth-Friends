@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import './App.css';
 import axios from "axios";
 import FriendsList from './components/FriendsList';
+import NewFriend from './components/NewFriend';
 
 
 const login = (formValues, actions) => {
@@ -29,6 +30,7 @@ function App(props) {
      <nav>
        <NavLink exact to='/'>Login</NavLink>
        <NavLink  to='/friends'>Friends</NavLink>
+       {/* <NavLink  to='/new-friend'>Friends</NavLink> */}
      </nav>
 
      <Route exact path = '/' render={ props => {
@@ -39,6 +41,11 @@ function App(props) {
      <Route path = '/friends' render={ props => {
        
        return (<FriendsList onSubmit ={login}/>)
+     }}/>
+
+<Route path = '/new-friend' render={ props => {
+       
+       return (<NewFriend onSubmit ={login}/>)
      }}/>
     </div>
   );
