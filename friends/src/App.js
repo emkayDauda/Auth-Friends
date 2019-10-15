@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 import Login from "./components/Login";
 import './App.css';
 import axios from "axios";
@@ -21,7 +21,8 @@ const login = (formValues, actions) => {
   actions.resetForm()
 }
 
-function App() {
+function App(props) {
+  console.log(props);
   return (
     <div className="App">
      <nav>
@@ -38,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
