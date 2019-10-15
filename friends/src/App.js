@@ -3,6 +3,13 @@ import { Route, NavLink } from 'react-router-dom';
 import Login from "./components/Login";
 import './App.css';
 
+
+const login = (formValues, actions) => {
+
+
+  actions.resetForm()
+}
+
 function App() {
   return (
     <div className="App">
@@ -11,7 +18,11 @@ function App() {
        {/* <NavLink  to='/'>Login</NavLink> */}
      </nav>
 
-     <Route exact path = '/' component={Login} />
+     <Route exact path = '/' render={ props => {
+       
+       return (<Login onSubmit ={login}/>)
+     }}
+      />
     </div>
   );
 }
