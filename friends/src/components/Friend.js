@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Heading,Content } from "react-bulma-components";
+import { Button, Card, Heading,Content, } from "react-bulma-components";
 import styled from "styled-components";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 
@@ -10,6 +10,10 @@ export default function Friend({friend}) {
             <Heading>{name}</Heading>
             <Content>{email}</Content>
             <Content>{`Age: ${age}`}</Content>
+           <div>
+           <Button color='dark' >Edit</Button>
+            <Button color='danger' >Delete</Button>
+           </div>
         </StyledCard>
     );
 }
@@ -19,5 +23,10 @@ const StyledCard = styled(Card)`
     margin-left: 5rem;
     border-radius: .4rem;
     margin-top: 1.5rem;
+    padding-bottom: 1rem;
 
+    div {
+        display: flex;
+        justify-content: space-evenly;
+    }
 `
