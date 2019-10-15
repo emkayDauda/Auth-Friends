@@ -1,9 +1,22 @@
 import React from "react";
+import { Button, Card, Heading,Content } from "react-bulma-components";
+import styled from "styled-components";
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 
-export default function Friend(props) {
+export default function Friend({friend}) {
+    const {name, age, email} = friend
     return (
-        <div>
-            
-        </div>
+        <StyledCard>
+            <Heading>{name}</Heading>
+            <Content>{email}</Content>
+            <Content>{`Age: ${age}`}</Content>
+        </StyledCard>
     );
 }
+
+const StyledCard = styled(Card)`
+    width: 25rem;
+    border-radius: .4rem;
+    margin-top: 1.5rem;
+
+`
