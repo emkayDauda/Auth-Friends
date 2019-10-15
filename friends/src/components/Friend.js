@@ -16,6 +16,7 @@ export default function Friend({friend}) {
 
 const StyledCard = styled(Card)`
     width: 25rem;
+    margin-left: 5rem;
     border-radius: .4rem;
     margin-top: 1.5rem;
 
