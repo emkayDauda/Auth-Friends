@@ -3,11 +3,11 @@ import { Formik, Form, Field } from "formik";
 import { Button, Container } from "react-bulma-components";
 import styled from "styled-components";
 
-export default function newFriend({ addFriend, initialValues }) {
+export default function NewFriend({ initialValues, addFriend, editFriend, isEditing }) {
   return (
     <StyledContainer>
       <Formik
-        onSubmit={addFriend}
+        onSubmit={isEditing? editFriend :addFriend}
         initialValues={initialValues}
         render={props => {
           return (
@@ -19,7 +19,7 @@ export default function newFriend({ addFriend, initialValues }) {
               <Field name="email" type="text" placeholder="Friend email" />
               <div></div>
               <Button color="primary" type="submit">
-                Add Friend
+                {isEditing? "Edit Friend": "Add Friend"}
               </Button>
             </Form>
           );
